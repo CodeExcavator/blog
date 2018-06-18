@@ -16,4 +16,7 @@ export class HomeComponent{
 
     }
 
+  showCategory(categoryId: number){
+    this.router.navigate(['/category-posts/' + categoryId]);
+  }
 }

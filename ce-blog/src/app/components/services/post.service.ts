@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, RequestOptions, Headers, Request, RequestMethod, URLSearchParams} from '@angular/http';
 import { Observable } from 'rxjs';
+import {Post, PostBody} from "../domain-classes";
 
 @Injectable()
 export class PostService {
@@ -11,13 +11,25 @@ export class PostService {
   private sharedURL: string;
   // private headers: Headers;
 
-  constructor(private http: Http)
+  constructor()
   {
     //this.snippetsURL = serviceConfig.actionUrl + 'api/snippets/';
     // this.headers = new Headers();
     // this.headers.append('Content-Type', 'application/json');
     // this.headers.append('Accept', 'application/json');
   }
+
+  getPostsByCategory(id: string): Observable<Post[]> {
+
+    let postBody = new PostBody();
+    postBody.postText = "TEST BODY!";
+
+    let post = new Post();
+    post.postBody = [postBody];
+
+    return Observable.create([post]);
+  }
+
   /*
    searchSnippet(criteria: SnippetSearchCriteria): Observable<SearchResultsByCategory[]> {
      return this.authHttp.post(this.snippetsURL + 'search', criteria)

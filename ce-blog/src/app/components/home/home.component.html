@@ -1,11 +1,4 @@
 <top-bar-view></top-bar-view>
-
-  <div class="jumbotron" style="margin-top: 5px; padding-bottom: 10px; padding-top: 10px;">
-    <h1 class="display-4">Code Excavator <i class="fas fa-code"></i></h1>
-    <p class="lead">a person who digs up <span style="text-decoration: line-through;">the ground</span> code looking for... purpose</p>
-    <hr />
-  </div>
-
 <div class="row">
   <div class="col-4">
     <div class="card bg-light mb-3" style="max-width: 20rem;">
@@ -29,9 +22,9 @@
       <div class="card-body">
         <h4 class="card-title">Topics</h4>
         <p class="card-text">
-          <button type="button" class="btn btn-outline-primary" style="margin: 1px">C#</button>
-          <button type="button" class="btn btn-outline-danger" style="margin: 1px">Angular</button>
-          <button type="button" class="btn btn-outline-success" style="margin: 1px">Consoles</button>
+          <button type="button" class="btn btn-outline-primary" (click)="showCategory(1)" style="margin: 1px">C#</button>
+          <button type="button" class="btn btn-outline-danger" (click)="showCategory(2)" style="margin: 1px">Angular</button>
+          <button type="button" class="btn btn-outline-success" (click)="showCategory(3)" style="margin: 1px">Consoles</button>
           <!--
           <button type="button" class="btn btn-outline-secondary" style="margin: 1px">Excavation</button>
           <button type="button" class="btn btn-outline-warning">Warning</button>
