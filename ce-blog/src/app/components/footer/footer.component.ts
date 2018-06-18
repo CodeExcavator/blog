@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-
-import { TopBarComponent } from '../top-bar'
 
 @Component({
-  selector: 'footer',
+  selector: 'footer-view',
   templateUrl: './footer.component.html',
 })
 export class FooterComponent{
