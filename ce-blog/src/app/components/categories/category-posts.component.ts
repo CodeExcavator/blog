@@ -20,15 +20,35 @@ export class CategoryPostsComponent implements OnInit{
               private postService: PostService,) {
 
   }
+
   ngOnInit() {
 
+    this.route.paramMap.subscribe(params => {
+
+      var test = this.postService.getPostsByCategory(params.get('categoryId'));
+      test.subscribe(
+        (posts: Post[]) => {
+          this.posts = posts;
+        },
+          err => console.error(err),
+          () => console.log('Observer got a complete notification'))
+        }
+      );
+
+
+
+/*
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.postService.getPostsByCategory(params.get('categoryId'))))
       .subscribe(
         (posts: Post[]) => {
-          this.posts = posts;
+
+          console.log("AAA");
+          console.log(this.posts);
+          this.posts = posts
         },
   error => this.errorMessage = <any>error,
   () => console.log('Posts Not found!'));
+  */
   }
 }

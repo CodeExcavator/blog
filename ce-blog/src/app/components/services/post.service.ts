@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {Post, PostBody} from "../domain-classes";
+import {HttpClient} from "@angular/common/http";
+import {parseHttpResponse} from "selenium-webdriver/http";
+import {map} from "rxjs/operators";
+import {of} from "rxjs/internal/observable/of";
 
 @Injectable()
 export class PostService {
 
-  private snippetsURL: string;
-  private stepsURL: string;
-  private codeBlocksURL: string;
-  private sharedURL: string;
-  // private headers: Headers;
+  private blogURL: string;
 
-  constructor()
+  constructor(private http: HttpClient)
   {
     //this.snippetsURL = serviceConfig.actionUrl + 'api/snippets/';
     // this.headers = new Headers();
@@ -27,10 +27,22 @@ export class PostService {
     let post = new Post();
     post.postBody = [postBody];
 
-    return Observable.create([post]);
+    return this.http.get<Post[]>("assets/data/posts/1/1.C-Sharp-Features.json");
+
+
+    /*""
+    return of([post]).pipe(
+      map(p => p)
+    );
+  */
   }
 
   /*
+  const squares$: Observable<number> = of(1, 2).pipe(
+    map(n => n * n)
+  );
+
+
    searchSnippet(criteria: SnippetSearchCriteria): Observable<SearchResultsByCategory[]> {
      return this.authHttp.post(this.snippetsURL + 'search', criteria)
        .map((response: Response) => <SearchResultsByCategory[]>response.json() )
@@ -89,8 +101,8 @@ export class PostService {
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+      //const err = body.error || JSON.stringify(body);
+      //errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
     } else {
       errMsg = error.message ? error.message : error.toString();
     }

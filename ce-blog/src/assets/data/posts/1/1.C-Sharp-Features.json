@@ -1,0 +1,19 @@
+[
+{
+  "id":1,
+  "title": "C# Features",
+  "createdAt": "2018-06-18",
+  "postBody":[
+    {"textType": 1, "postText":"test"}
+  ]
+}
+,
+  {
+    "id":1,
+    "title": "C# Features",
+    "createdAt": "2018-06-18",
+    "postBody":[
+      {"textType": 1, "postText":"test"}
+    ]
+  }
+]
