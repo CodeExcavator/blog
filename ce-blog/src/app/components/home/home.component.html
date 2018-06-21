@@ -24,14 +24,6 @@
         <p class="card-text">
           <button type="button" class="btn btn-outline-primary" (click)="showCategory(1)" style="margin: 1px">C#</button>
           <button type="button" class="btn btn-outline-danger" (click)="showCategory(2)" style="margin: 1px">Angular</button>
-          <button type="button" class="btn btn-outline-success" (click)="showCategory(3)" style="margin: 1px">Consoles</button>
-          <!--
-          <button type="button" class="btn btn-outline-secondary" style="margin: 1px">Excavation</button>
-          <button type="button" class="btn btn-outline-warning">Warning</button>
-          <button type="button" class="btn btn-outline-info">Info</button>
-          <button type="button" class="btn btn-outline-light">Light</button>
-          <button type="button" class="btn btn-outline-dark">Dark</button>
-          -->
         </p>
       </div>
     </div>
@@ -43,36 +35,33 @@
       </div>
       <div class="card-body" style="padding: 2px;">
         <p class="card-text">
-        <!--MAIL CHIMP-->
-        <div id="mc_embed_signup">
-          <form action="https://codeexcavator.us18.list-manage.com/subscribe/post?u=491f4f13857267d61731203e0&amp;id=866caf78e0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-
-              <div class="mc-field-group">
-                <label for="mce-EMAIL">Email Address </label>
-                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+        <div id="signup">
+          <div class="ce-field-group">
+            <form method="post" >
+              <div >
+                <label for="email">Email Address </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="email">
               </div>
-              <div class="mc-field-group">
-                <label for="mce-FNAME">First Name </label>
-                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              <div class="">
+                <label for="fname">First Name </label>
+                <input type="text" value="" name="FNAME" class="" id="fname">
               </div>
-              <div class="mc-field-group">
-                <label for="mce-LNAME">Last Name </label>
-                <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+              <div class="">
+                <label for="lname">Last Name </label>
+                <input type="text" value="" name="LNAME" class="" id="lname">
               </div>
-              <div id="mce-responses" class="clear">
+              <div id="ce-responses" class="clear">
                 <div class="response" id="mce-error-response" style="display:none"></div>
                 <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_491f4f13857267d61731203e0_866caf78e0" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </div>
+              </div>
+              <div class="clear">
+                <input type="submit" value="Subscribe" name="subscribe" id="ce-embedded-subscribe" class="button">
+              </div>
           </form>
         </div>
-        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-        <!--End mc_embed_signup-->
       </div>
     </div>
+  </div>
   </div>
 </div>
 <footer-view></footer-view>

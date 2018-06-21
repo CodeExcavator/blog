@@ -1,17 +1,17 @@
 <top-bar-view></top-bar-view>
 
-<a [routerLink]="['/category-posts/' + category.id]">
-  <h1>{{category.title}}</h1>
+<a [routerLink]="['/category-posts/' + category?.id]">
+  <h1>{{category?.title}}</h1>
 </a>
 
 <div  class="row">
-    <div *ngFor="let body of post.postBody; let i = index;">
-
-      <a [routerLink]="['/post-view/',post.id]">
-        {{post.title}}
-      </a>
-      <span [innerHTML] = "body.postText">
-        </span>
+    <div *ngFor="let body of post?.postBody; let i = index;">
+      <div *ngIf="body.textType == 0" [innerHTML] = "body.postText">
+      </div>
+      <div class="col-12" *ngIf= "body.textType == 1" ace-editor [mode]="'javascript'"
+           [(text)]="body.postText" style="min-height: 200px; min-width: 500px;  overflow: auto;">
+      </div>
+      <!--For more info https://github.com/fxmontigny/ng2-ace-editor-->
     </div>
 </div>
 
