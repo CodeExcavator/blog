@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, RouterLink, ActivatedRoute, Params, ParamMap} from '@angular/router';
 import { Observable } from 'rxjs';
-import {PostService} from "../services";
-import {Post} from "../domain-classes";
-import {pipe} from "rxjs/internal-compatibility";
-import {switchMap} from "rxjs/operators";
+import {CategoryService, PostService} from "../services";
+import {Category, Post} from "../domain-classes";
 
 @Component({
   selector: 'category-posts',
@@ -12,43 +10,35 @@ import {switchMap} from "rxjs/operators";
 })
 export class CategoryPostsComponent implements OnInit{
 
+  category: Category;
   posts: Post[];
-  errorMessage: string;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private postService: PostService,) {
+              private postService: PostService,
+              private categoryService: CategoryService,) {
 
   }
 
   ngOnInit() {
-
     this.route.paramMap.subscribe(params => {
 
-      var test = this.postService.getPostsByCategory(params.get('categoryId'));
-      test.subscribe(
+    this.categoryService.getCategoryById(params.get('categoryId'))
+      .subscribe(
+        (category: Category) => {
+          this.category = category;
+        },
+        err => console.error(err),
+        () => console.log('Observer (Category) got a complete notification'));
+
+      this.postService.getPostsByCategory(params.get('categoryId'))
+      .subscribe(
         (posts: Post[]) => {
           this.posts = posts;
         },
-          err => console.error(err),
-          () => console.log('Observer got a complete notification'))
-        }
-      );
-
-
-
-/*
-    this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.postService.getPostsByCategory(params.get('categoryId'))))
-      .subscribe(
-        (posts: Post[]) => {
-
-          console.log("AAA");
-          console.log(this.posts);
-          this.posts = posts
-        },
-  error => this.errorMessage = <any>error,
-  () => console.log('Posts Not found!'));
-  */
+        err => console.error(err),
+        () => console.log('Observer (Posts) got a complete notification'));
+      }
+    );
   }
 }

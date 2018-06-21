@@ -1,25 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod, URLSearchParams} from '@angular/http';
 import { Observable } from 'rxjs';
+import {HttpClient} from "@angular/common/http";
+import {Category} from "../domain-classes";
+import {of} from "rxjs/internal/observable/of";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class CategoryService {
 
-  private snippetsURL: string;
-  private stepsURL: string;
-  private codeBlocksURL: string;
-  private sharedURL: string;
-  // private headers: Headers;
-
-  constructor(private http: Http)
+  constructor(private http: HttpClient)
   {
     //this.snippetsURL = serviceConfig.actionUrl + 'api/snippets/';
   }
 
+  getCategoryById(id: string):Observable<Category>{
+
+    //Mock Data
+    var categories: Category[];
+
+    categories = [
+      new Category({id:"1", title:"C#"}),
+      new Category({id:"2", title:"Angular"})
+    ];
+    //-------------------------
+    let category = categories.filter(x => x.id == id);
+
+    return of(category).pipe(
+      map(res => res[0]));
+  }
+
   private extractData(res: Response) {
-    // console.log('RE: ' + res);
     const body = res.json();
-    // console.log('body: ' + body);
     return body || {};
   }
 

@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<top-bar-view></top-bar-view>
 
-</body>
-</html>
+<a [routerLink]="['/category-posts/' + category.id]">
+  <h1>{{category.title}}</h1>
+</a>
+
+<div  class="row">
+    <div *ngFor="let body of post.postBody; let i = index;">
+
+      <a [routerLink]="['/post-view/',post.id]">
+        {{post.title}}
+      </a>
+      <span [innerHTML] = "body.postText">
+        </span>
+    </div>
+</div>
+
+<footer-view></footer-view>

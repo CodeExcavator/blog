@@ -1,0 +1,27 @@
+[
+{
+  "id":1,
+  "title": "Delegates",
+  "createdAt": "2018-06-18",
+  "postBody":[
+    {"textType": 0, "postText":"<p>A delegate is a type that represents references to methods with a particular parameter list and return type. When you instantiate a delegate, you can associate its instance with any method with a compatible signature and return type. You can invoke (or call) the method through the delegate instance.</p><p>Delegates are used to pass methods as arguments to other methods. Event handlers are nothing more than methods that are invoked through delegates. You create a custom method, and a class such as a windows control can call your method when a certain event occurs. The following example shows a delegate declaration:</p>"},
+    {"textType": 1, "postText":"public delegate int PerformCalculation(int x, int y);"},
+    {"textType": 0, "postText":"<p>Any method from any accessible class or struct that matches the delegate type can be assigned to the delegate. The method can be either static or an instance method. This makes it possible to programmatically change method calls, and also plug new code into existing classes.</p>"},
+    {"textType": 0, "postText":"<div class='alert alert-info' role='alert'>In the context of method overloading, the signature of a method does not include the return value. But in the context of delegates, the signature does include the return value. In other words, a method must have the same return type as the delegate.</div>"},
+    {"textType": 0, "postText":"<p>This ability to refer to a method as a parameter makes delegates ideal for defining callback methods. For example, a reference to a method that compares two objects could be passed as an argument to a sort algorithm. Because the comparison code is in a separate procedure, the sort algorithm can be written in a more general way.</p>"},
+    {"textType": 0, "postText":"<p>Sample text and code taken from <small><a href='https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/'>Microsoft</a></small></p>"}
+  ]
+}
+,
+  {
+    "id":2,
+    "title": "Anonymous Functions",
+    "createdAt": "2018-06-18",
+    "postBody":[
+      {"textType": 0, "postText":"<p>An anonymous function is an 'inline' statement or expression that can be used wherever a delegate type is expected. You can use it to initialize a named delegate or pass it instead of a named delegate type as a method parameter. There are two kinds of anonymous functions, which are discussed individually in the following topics:</p>"},
+      {"textType": 0, "postText":"<ul><li>Lambda Expressions</li><li>Anonymous Methods Note</li></ul>"},
+      {"textType": 0, "postText":"<div class='alert alert-info' role='alert'>Lambda expressions can be bound to expression trees and also to delegates.</div>"},
+      {"textType": 0, "postText":"<p>Sample text and code taken from <small><a href='https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-functions'>Microsoft</a></small></p>"}
+    ]
+  }
+]
