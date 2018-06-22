@@ -37,31 +37,17 @@
         <p class="card-text">
         <div id="signup">
           <div class="ce-field-group">
-            <form method="post" >
-              <div >
-                <label for="email">Email Address </label>
-                <input type="email" value="" name="EMAIL" class="required email" id="email">
-              </div>
-              <div class="">
-                <label for="fname">First Name </label>
-                <input type="text" value="" name="FNAME" class="" id="fname">
-              </div>
-              <div class="">
-                <label for="lname">Last Name </label>
-                <input type="text" value="" name="LNAME" class="" id="lname">
-              </div>
-              <div id="ce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>
-              <div class="clear">
-                <input type="submit" value="Subscribe" name="subscribe" id="ce-embedded-subscribe" class="button">
-              </div>
-          </form>
+            <subscribe-form [formData]="autoData" (formSubmitted) = "onFormSubmitted($event)"></subscribe-form>
+            <br/>
+            <button class="btn btn-secondary" style="margin: 2px;" (click)="autocomplete()">Autocomplete</button>
+            <button class="btn btn-secondary" style="margin: 2px;" (click)="clear()">Clear</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
 </div>
+<ngb-alert  *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true" >
+  {{alertMsg}}
+</ngb-alert>
 <footer-view></footer-view>

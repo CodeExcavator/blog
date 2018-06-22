@@ -4,12 +4,22 @@
   <h1>{{category?.title}}</h1>
 </a>
 
+<style>
+  .aceEditorWidth {
+    min-width: 1000px; /* Suppose you want minimum width of 1000px */
+    width: auto !important; /* Firefox will set width as auto */
+    width: 1000px;
+  }
+</style>
 <div  class="row">
     <div *ngFor="let body of post?.postBody; let i = index;">
       <div *ngIf="body.textType == 0" [innerHTML] = "body.postText">
       </div>
-      <div class="col-12" *ngIf= "body.textType == 1" ace-editor [mode]="'javascript'"
-           [(text)]="body.postText" style="min-height: 200px; min-width: 500px;  overflow: auto;">
+      <div  class="col-12" *ngIf= "body.textType == 1">
+        <div ace-editor [mode]="'javascript'"
+             [(text)]="body.postText" style="min-height: 100px; " class="aceEditorWidth">
+        </div>
+        <br/>
       </div>
       <!--For more info https://github.com/fxmontigny/ng2-ace-editor-->
     </div>

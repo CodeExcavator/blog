@@ -20,7 +20,7 @@
       {"textType": 0, "postText":"<ul><li>Lambda Expressions</li><li>Anonymous Methods Note</li></ul>"},
       {"textType": 1, "postText":"{ path: 'detail/:id', component: HeroDetailComponent }"},
       {"textType": 0, "postText":"<p>The colon (:) in the path indicates that :id is a placeholder for a specific hero id. At this point, all application routes are in place.</p>"},
-      {"textType": 1, "postText":"const routes: Routes = [{ path: '', redirectTo: '/dashboard', pathMatch: 'full' }, { path: 'dashboard', component: DashboardComponent }, { path: 'detail/:id', component: HeroDetailComponent }, { path: 'heroes', component: HeroesComponent }];"},
+      {"textType": 1, "postText":"const routes: Routes = [{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },\n { path: 'dashboard', component: DashboardComponent },\n { path: 'detail/:id', component: HeroDetailComponent },\n { path: 'heroes', component: HeroesComponent }];"},
       {"textType": 0, "postText":"<p>Sample text and code taken from <small><a href='https://angular.io/tutorial/toh-pt5'>Angular.io</a></small></p>"}
     ]
   }
