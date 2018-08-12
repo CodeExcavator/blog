@@ -19,7 +19,7 @@
     "createdAt": "2018-06-18",
     "postBody":[
       {"textType": 0, "postText":"<p>An anonymous function is an 'inline' statement or expression that can be used wherever a delegate type is expected. You can use it to initialize a named delegate or pass it instead of a named delegate type as a method parameter. There are two kinds of anonymous functions, which are discussed individually in the following topics:</p>"},
-      {"textType": 0, "postText":"<ul><li>Lambda Expressions</li><li>Anonymous Methods Note</li></ul>"},
+      {"textType": 0, "postText":"<div><ul><li>Lambda Expressions</li><li>Anonymous Methods Note</li><li>!Weird formatting!</li><li>!Excavation is in progress!</li></ul></div>"},
       {"textType": 0, "postText":"<div class='alert alert-info' role='alert'>Lambda expressions can be bound to expression trees and also to delegates.</div>"},
       {"textType": 0, "postText":"<p>Sample text and code taken from <small><a href='https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-functions'>Microsoft</a></small></p>"}
     ]
